@@ -3,7 +3,8 @@ function makeGrid() {
 
   for (let i = 0; i < 256; i++) {
     let gridSquare = document.createElement('div');
-    gridSquare.id = 'row' + i;
+    gridSquare.classList.add('drawSquare');
+    gridSquare.innerText = i;
 
     gridContainer.appendChild(gridSquare);
   }
