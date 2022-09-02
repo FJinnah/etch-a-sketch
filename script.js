@@ -1,4 +1,4 @@
-const gridContainer = document.querySelector('#grid-container');
+const gridContainer = document.querySelector('#gridContainer');
 //Function to create 256 divs
 function makeGrid() {
 
@@ -31,13 +31,13 @@ const newGrid = document.querySelector('#gridButton');
 newGrid.addEventListener('click', buttonPrompt);
 function buttonPrompt() {
   const userInput = prompt('Please select a grid size between 1 and 100.');
-  if (userInput >= 1 && userInput <= 100) {
-    gridContainer.style.gridTemplateColumns = 'repeat(userInput, auto)';
-    gridContainer.style.gridTemplateRows = 'repeat(userInput,auto)';
-    for (let i = 0; i < userInput; i++) {
+  const finalNumber = parseInt(userInput);
+  if (finalNumber >= 1 && finalNumber <= 100) {
+    gridContainer.style.gridTemplateColumns = `repeat(${finalNumber}, 1fr)`;
+    gridContainer.style.gridTemplateRows = `repeat(${finalNumber}, 1fr)`;
+    for (let i = 0; i < (finalNumber ** 2); i++) {
       let gridSquare = document.createElement('div');
       gridSquare.classList.add('drawSquare');
-      // gridSquare.innerText = i;
       gridContainer.appendChild(gridSquare);
       //This part changes the background colour of each div to black when the user hovers over it
       gridSquare.addEventListener('mouseover', () => {
@@ -49,27 +49,4 @@ function buttonPrompt() {
 
   }
 }
-
-
-// const button = document.querySelector('#gridButton');
-// button.addEventListener('click', buttonPrompt);
-// function buttonPrompt() {
-//   const userInput = prompt('Please select a grid size (maximum of 100)');
-//   const gridSize = 500 / parseInt(userInput);
-//   // return gridSize;  
-//   const gridContainer = document.querySelector('#grid-container');
-
-//   for (let i = 0; i < gridSize; i++) {
-//     let gridSquare = document.createElement('div');
-//     gridSquare.classList.add('drawSquare');
-//     // gridSquare.innerText = i;
-//     //This part changes the background colour of each div to black when the user hovers over it
-//     gridContainer.appendChild(gridSquare);
-    
-//     gridSquare.addEventListener('mouseover', () => {
-//       gridSquare.style.backgroundColor = 'black';
-//     })
-
-//   }
-// }
 
