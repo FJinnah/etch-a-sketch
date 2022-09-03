@@ -1,3 +1,7 @@
+body {
+  background-color: lightgray;
+}
+
 #gridContainer {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -13,6 +17,14 @@
   border: 5px solid black;
 }
 
+h3 {
+  text-align: center;
+}
+
+#buttonContainer {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
 .drawSquare {
 

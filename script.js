@@ -30,6 +30,11 @@ clearGrid.addEventListener('click', () => {
 const newGrid = document.querySelector('#gridButton');
 newGrid.addEventListener('click', buttonPrompt);
 function buttonPrompt() {
+  const selectGrid = document.querySelectorAll('.drawSquare');
+  selectGrid.forEach(function() {
+    let removal = document.querySelector('.drawSquare');
+    gridContainer.removeChild(removal);
+  })
   const userInput = prompt('Please select a grid size between 1 and 100.');
   const finalNumber = parseInt(userInput);
   if (finalNumber >= 1 && finalNumber <= 100) {
@@ -45,7 +50,7 @@ function buttonPrompt() {
       })  
     }
   } else {
-    const userInput = prompt('Please select a grid size between 1 and 100.');
+    buttonPrompt();
 
   }
 }
